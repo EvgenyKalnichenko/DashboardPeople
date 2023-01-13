@@ -3,13 +3,11 @@
     <div v-if="firebaseUser">
       <div>{{ data }}</div>
       <br>
-      <client-only>
-        <pre>{{ firebaseUser }}</pre>
-        <br>
-        <button @click="getToken()">
-          get accessToken
-        </button>
-      </client-only>
+      <pre>{{ firebaseUser }}</pre>
+      <br>
+      <button @click="getToken()">
+        get accessToken
+      </button>
     </div>
     <div v-else>
       User is signed out

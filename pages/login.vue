@@ -42,9 +42,10 @@ const toggleButtonText = computed(() => {
   return showRegisterForm.value ? "Sign in" : "Register";
 });
 
-const signin = () => {
-  signInUser(signinForm.value.email, signinForm.value.password);
-  signinForm.value = { email: "", password: "" };
+const signin = async () => {
+  const result = await signInUser(signinForm.value.email, signinForm.value.password);
+  console.log('result', result)
+  // signinForm.value = { email: "", password: "" };
 };
 
 const register = async () => {

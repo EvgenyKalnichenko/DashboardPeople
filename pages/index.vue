@@ -55,9 +55,7 @@ onMounted(() => {
 onUnmounted(() => {
   clearTimeout(debounce)
 })
-
 </script>
-
 
 <style lang="scss" scoped>
 .catalog {

@@ -4,6 +4,7 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "node .output/server/index.mjs",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore ."
   },
@@ -11,6 +12,7 @@
     "@nuxt/eslint-config": "^0.1.1",
     "eslint": "^8.31.0",
     "nuxt3": "latest",
+    "push-dir": "^0.4.1",
     "sass": "^1.57.1",
     "scss": "^0.2.4"
   },
