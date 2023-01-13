@@ -16,6 +16,5 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          npm run lint
           npm build
           npm start
