@@ -14,8 +14,9 @@ export const createUser = async (email, password) => {
     email,
     password
   ).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    console.log('error', error)
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
   });
   return credentials;
 };
@@ -27,8 +28,9 @@ export const signInUser = async (email, password) => {
     email,
     password
   ).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    console.log('error', error)
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
   });
   return credentials;
 };

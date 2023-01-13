@@ -4,8 +4,12 @@
       class="hero is-grey is-fullheight is-justify-content-flex-start"
     >
       <div class="has-text-centered mt-6">
-        <p class="title">Firebase/Nuxt3 Auth</p>
-        <p class="subtitle">https://nuxt3-firebase-razorcx.netlify.app/</p>
+        <p class="title">
+          Firebase/Nuxt3 Auth
+        </p>
+        <p class="subtitle">
+          https://nuxt3-firebase-razorcx.netlify.app/
+        </p>
       </div>
 
       <div class="section">
@@ -14,23 +18,36 @@
             <AuthFirebase
               class="box px-5 py-5 mx-4"
               title="Register"
-              @submit="register"
               :form="registerForm"
               :message="registerMessage"
+              @submit="register"
             />
             <AuthFirebase
               class="box px-5 py-5 mx-4"
               title="Sign in"
-              @submit="signin"
               :form="signinForm"
+              @submit="signin"
             />
           </div>
-          <div class="column is-4" v-if="firebaseUser">
-            <p class="subtitle">Firebase Auth Current User</p>
+          <div
+            v-if="firebaseUser"
+            class="column is-4"
+          >
+            <p class="subtitle">
+              Firebase Auth Current User
+            </p>
             <pre>{{ firebaseUser }}</pre>
-            <button class="button mt-4" @click="signOutUser">Sign Out</button>
+            <button
+              class="button mt-4"
+              @click="signOutUser"
+            >
+              Sign Out
+            </button>
           </div>
-          <div class="column is-4 has-text-centered" v-else>
+          <div
+            v-else
+            class="column is-4 has-text-centered"
+          >
             <p>User is signed out</p>
           </div>
         </div>

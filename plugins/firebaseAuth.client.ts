@@ -6,7 +6,7 @@ import {
 export default defineNuxtPlugin((nuxtApp) => {
 
   const config = useRuntimeConfig();
-  console.log('config', config)
+
   const firebaseConfig = {
     apiKey:  config.VUE_APP_API_KEY,
     authDomain: config.VUE_APP_AUTH_DOMAIN,
@@ -14,7 +14,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  initializeApp(firebaseConfig);
 
   initUser();
 
@@ -22,5 +22,4 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   nuxtApp.vueApp.provide('auth', auth);
   nuxtApp.provide('auth', auth);
-
 });

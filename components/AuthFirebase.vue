@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2 class="mb-5 title is-4 has-text-black">{{ title }}</h2>
+    <h2 class="title is-4 has-text-black">
+      {{ title }}
+    </h2>
     <div class="field">
       <label class="label">Email</label>
       <div class="control has-icons-left has-icons-right">
@@ -10,9 +12,9 @@
           type="email"
           placeholder="john@gmail.com"
           autocomplete="false"
-        />
+        >
         <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-envelope" />
         </span>
       </div>
     </div>
@@ -26,21 +28,29 @@
             type="password"
             placeholder="*************"
             autocomplete="false"
-          />
+          >
         </div>
       </div>
     </div>
 
-    <div v-if="message" class="has-text-success p-3">
+    <div
+      v-if="message"
+      class="has-text-success p-3"
+    >
       {{ message }}
     </div>
 
-    <button class="button is-success" @click="$emit('submit')">Submit</button>
+    <button
+      class="button is-success"
+      @click="$emit('submit')"
+    >
+      Submit
+    </button>
   </div>
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   form: Object,
   title: String,
   message: String
