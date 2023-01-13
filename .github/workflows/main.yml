@@ -12,7 +12,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: cypress-io/github-action@v4
-        with:
-          build: yarn run build
-          start: yarn run start
+          
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm run lint
+          npm build
+          npm start
