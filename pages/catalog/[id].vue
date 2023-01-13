@@ -1,10 +1,15 @@
 <template>
   <div class="container">
-    <h1>Детальная страница</h1>
-    {{ data }}
+    <h1>
+      {{ data.Title }}
+    </h1>
+    <br><br>
+    <pre>
+      {{ data }}
+    </pre>
     <br><br>
     <button @click="testPostReq">
-      test
+      testPostReq
     </button>
   </div>
 </template>

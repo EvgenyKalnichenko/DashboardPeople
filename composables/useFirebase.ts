@@ -42,7 +42,7 @@ export const initUser = async () => {
 
   const userCookie = useCookie("userCookie");
 
-  const router = useRouter();
+  // const router = useRouter();
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -50,7 +50,7 @@ export const initUser = async () => {
       // https://firebase.google.com/docs/reference/js/firebase.User
     } else {
       //if signed out
-      // router.push("/");
+      // router.push("/login");
     }
 
     firebaseUser.value = user;
@@ -62,6 +62,13 @@ export const initUser = async () => {
       method: "POST",
       body: { user },
     });
+  });
+};
+
+export const getIdToken = async () => {
+  const auth = getAuth();
+  await auth.currentUser.getIdToken(true).then((token) => {
+    console.log('token', token)
   });
 };
 

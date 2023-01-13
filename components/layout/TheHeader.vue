@@ -5,9 +5,6 @@
         <NuxtLink to="/">
           Home
         </NuxtLink>
-        <NuxtLink to="/catalog">
-          Catalog
-        </NuxtLink>
         <NuxtLink to="/secret">
           Profile
         </NuxtLink>
@@ -56,6 +53,8 @@ const signOut = async () => {
 
   &__container {
     display: flex;
+    min-height: 40px;
+    align-items: center;
     justify-content: space-between;
   }
 }

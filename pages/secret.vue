@@ -1,11 +1,13 @@
 <template>
   <div class="container">
     <div v-if="firebaseUser">
+      <div>{{ data }}</div>
+      <br>
       <client-only>
         <pre>{{ firebaseUser }}</pre>
         <br>
         <button @click="getToken()">
-          Получить токен
+          get accessToken
         </button>
       </client-only>
     </div>
@@ -19,6 +21,8 @@
 definePageMeta({
   middleware: ["auth"],
 });
+
+const { data } = useFetch('/api/secret')
 
 const firebaseUser = useFirebaseUser();
 

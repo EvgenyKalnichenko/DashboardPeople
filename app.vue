@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import TheHeader from "./components/_layout/TheHeader";
+import TheHeader from "./components/layout/TheHeader";
 </script>
 
 <style>
