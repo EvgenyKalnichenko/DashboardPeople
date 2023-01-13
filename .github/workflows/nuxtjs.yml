@@ -14,7 +14,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16 # 指定node版本
+          node-version: 18 # 指定node版本
       # 打包代码生成环境
       - name: Build
         run: |
