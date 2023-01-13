@@ -3,18 +3,24 @@
     <h1>
       {{ data.Title }}
     </h1>
-    <br><br>
-    <pre>
+    <div class="people-detail">
+      <CardPeople
+          :people="data"
+      />
+    </div>
+    <code>
       {{ data }}
-    </pre>
-    <br><br>
-    <button @click="testPostReq">
-      testPostReq
-    </button>
+    </code>
+    <div>
+      <button @click="testPostReq">
+        testPostReq
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup>
+import CardPeople from "../../components/card/CardPeople";
 const route = useRoute()
 const id = route.params.id
 
@@ -33,8 +39,17 @@ const testPostReq = () => {
     }
   })
 }
+
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.people-detail {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
 
+  & > * {
+    width: 320px;
+  }
+}
 </style>
