@@ -19,6 +19,8 @@
     "scss": "^0.2.4"
   },
   "dependencies": {
-    "firebase": "^9.6.8"
+    "@vee-validate/rules": "^4.7.3",
+    "firebase": "^9.6.8",
+    "vee-validate": "^4.7.3"
   }
 }

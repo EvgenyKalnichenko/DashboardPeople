@@ -2,6 +2,8 @@ import type { IncomingMessage, ServerResponse } from 'http'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   // @ts-ignore
+  console.log(req)
+  // @ts-ignore
   const user = req.user;
 
   if(user) {

@@ -20,12 +20,9 @@
       </div>
       <div class="level">
         <div class="level-item has-text-centered">
-          <button
-            class="button"
-            @click="showRegisterForm = !showRegisterForm"
-          >
+          <UiButton @click="showRegisterForm = !showRegisterForm">
             {{ toggleButtonText }}
-          </button>
+          </UiButton>
         </div>
       </div>
     </div>
