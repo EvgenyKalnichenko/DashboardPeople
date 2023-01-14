@@ -3,7 +3,7 @@
     class="form"
     @submit.prevent="onSubmit"
   >
-    <UiLoader v-if="isLoading"/>
+    <UiLoader v-if="isLoading" />
     <h2 class="title is-4 has-text-black">
       {{ title }}
     </h2>
@@ -27,7 +27,7 @@
       Submit
     </UiButton>
     <div class="form-message">
-      {{message}}
+      {{ message }}
     </div>
   </form>
 </template>

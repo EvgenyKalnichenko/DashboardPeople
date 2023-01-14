@@ -20,8 +20,8 @@
           {{ firebaseUser.email }}
         </div>
         <UiButton
-            v-if="firebaseUser"
-            @click="signOut"
+          v-if="firebaseUser"
+          @click="signOut"
         >
           Sign out
         </UiButton>

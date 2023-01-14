@@ -1,3 +1,7 @@
+## Учебный проект
+Demo page: https://superb-pudding-6eb6db.netlify.app/
+Nuxt3 + firebase
+
 ## Setup
 
 Make sure to install the dependencies
