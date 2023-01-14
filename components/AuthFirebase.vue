@@ -84,6 +84,8 @@ const onSubmit = handleSubmit(() => {
   grid-gap: 5px;
   position: relative;
   overflow: hidden;
+  max-width: 550px;
+  width: 100%;
 
   button {
     margin: 10px 0;
