@@ -5,7 +5,7 @@
     </h1>
     <div class="people-detail">
       <CardPeople
-          :people="data"
+        :people="data"
       />
     </div>
     <code>

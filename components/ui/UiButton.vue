@@ -1,14 +1,14 @@
 <template>
   <button
-      class="btn"
-      :type="type"
+    class="btn"
+    :type="type"
   >
-    <slot/>
+    <slot />
   </button>
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   modelValue: {
     type: String,
     default: () => ''

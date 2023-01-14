@@ -6,7 +6,6 @@
           v-if="showRegisterForm"
           class="box px-5 py-5 mx-4"
           title="Register"
-          :form="registerForm"
           :message="registerMessage"
           @submit="register"
         />
@@ -14,7 +13,6 @@
           v-if="!showRegisterForm"
           class="box px-5 py-5 mx-4"
           title="Sign in"
-          :form="signinForm"
           @submit="signin"
         />
       </div>
@@ -25,38 +23,37 @@
           </UiButton>
         </div>
       </div>
+      <div class="level">
+        <div class="level-item has-text-centered">
+          {{ message }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 const showRegisterForm = ref(false);
-const registerMessage = ref();
-const registerForm = ref({ email: "", password: "" });
-const signinForm = ref({ email: "", password: "" });
+const message = ref('');
 
 const toggleButtonText = computed(() => {
   return showRegisterForm.value ? "Sign in" : "Register";
 });
 
-const signin = async () => {
-  const result = await signInUser(signinForm.value.email, signinForm.value.password);
-  console.log('result', result)
-  // signinForm.value = { email: "", password: "" };
+const signin = async (data) => {
+  await signInUser(data.email, data.password);
 };
 
-const register = async () => {
-  console.log(registerForm.value);
+const register = async (data) => {
   const credentials = await createUser(
-      registerForm.value.email,
-      registerForm.value.password
+      data.email,
+      data.password
   );
-  registerForm.value = { email: "", password: "" };
 
   if (credentials) {
-    registerMessage.value = `Successfully registered: ${credentials.user.email}`;
+    message.value = `Successfully registered: ${credentials.user.email}`;
     setTimeout(() => {
-      registerMessage.value = "";
+      message.value = "";
     }, 3000);
   }
 };

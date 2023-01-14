@@ -1,23 +1,26 @@
 <template>
-  <form @submit.prevent="onSubmit" class="form">
+  <form
+    class="form"
+    @submit.prevent="onSubmit"
+  >
     <h2 class="title is-4 has-text-black">
       {{ title }}
     </h2>
     <UiInput
-        label="Email"
-        id="email"
-        v-model="email"
-        placeholder="john@gmail.com"
-        type="email"
-        :error="emailError"
+      id="email"
+      v-model="email"
+      label="Email"
+      placeholder="john@gmail.com"
+      type="email"
+      :error="emailError"
     />
     <UiInput
-        label="Password"
-        id="Password"
-        v-model="password"
-        placeholder="******"
-        type="Password"
-        :error="passwordError"
+      id="Password"
+      v-model="password"
+      label="Password"
+      placeholder="******"
+      type="Password"
+      :error="passwordError"
     />
     <UiButton type="submit">
       Submit
@@ -29,9 +32,14 @@
 import { useForm, useField } from "vee-validate";
 
 defineProps({
-  form: Object,
-  title: String,
-  message: String
+  title: {
+    type: String,
+    default: ''
+  },
+  message: {
+    type: String,
+    default: ''
+  },
 });
 const emit = defineEmits(['submit'])
 
@@ -40,7 +48,7 @@ const schema = {
   email: 'required|email',
 }
 // Create a form context with the validation schema
-const {handleSubmit, isSubmitting} = useForm({
+const {handleSubmit} = useForm({
   validationSchema: schema,
 })
 
@@ -54,19 +62,14 @@ function onInvalidSubmit({ errors }) {
   }
 }
 
-const onSubmit = handleSubmit(values => {
+const onSubmit = handleSubmit(() => {
   emit('submit', {
     password: password.value,
     email: email.value,
   })
 }, onInvalidSubmit)
 
-const handlerSubmit = (e) => {
-  emit('submit', {
-    email: email.value,
-    password: password.value
-  })
-}
+
 </script>
 
 <style lang="scss" scoped>

@@ -1,23 +1,25 @@
 <template>
   <div class="form-group">
     <label
-        v-if="label"
-        :for="id"
-        class="form-group__label">
-      {{label}}
+      v-if="label"
+      :for="id"
+      class="form-group__label"
+    >
+      {{ label }}
     </label>
     <input
-        :id="id"
-        :type="type"
-        :value="modelValue"
-        :placeholder="placeholder"
-        @input="handlerInput"
-        class="form-group__input"
+      :id="id"
+      :type="type"
+      :value="modelValue"
+      :placeholder="placeholder"
+      class="form-group__input"
+      @input="handlerInput"
     >
     <small
-        v-if="error"
-        class="form-group__error">
-      {{error}}
+      v-if="error"
+      class="form-group__error"
+    >
+      {{ error }}
     </small>
   </div>
 </template>
@@ -54,11 +56,6 @@ const props = defineProps({
 const handlerInput = (e) => {
   emit('update:modelValue', e.target.value)
 }
-
-const classError = computed(() => {
-  console.log('props.error', props.error)
-  return props.error ? 'error' : ''
-})
 </script>
 
 <style lang="scss" scoped>
