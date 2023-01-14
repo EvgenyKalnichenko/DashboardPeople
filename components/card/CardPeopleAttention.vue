@@ -1,9 +1,9 @@
 <template>
-  <card-row
+  <CardPeopleRow
     name="Attention"
     :value="`${max}h`"
   />
-  <card-line-indicator :value="attention" />
+  <CardPeopleLineIndicator :value="attention" />
   <div class="card-attention-grid">
     <div
       v-for="(item, index) in attention"
@@ -20,9 +20,6 @@
 </template>
 
 <script setup>
-import CardRow from "./CardPeopleRow";
-import CardLineIndicator from "./CardPeopleLineIndicator";
-
 const props = defineProps({
   content: {
     type: Array,

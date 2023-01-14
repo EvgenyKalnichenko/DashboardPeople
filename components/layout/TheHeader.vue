@@ -19,13 +19,12 @@
         <div class="header__user">
           {{ firebaseUser.email }}
         </div>
-        <button
-          v-if="firebaseUser"
-          class="button"
-          @click="signOut"
+        <UiButton
+            v-if="firebaseUser"
+            @click="signOut"
         >
           Sign out
-        </button>
+        </UiButton>
       </div>
     </div>
   </header>
@@ -33,7 +32,6 @@
 
 <script setup>
 const firebaseUser = useFirebaseUser();
-
 
 const signOut = async () => {
   await signOutUser();
@@ -43,12 +41,12 @@ const signOut = async () => {
 <style lang="scss" scoped>
 .header {
   background: #fff;
-  padding: 20px;
 
   &__right {
     display: flex;
     align-items: center;
     gap: 20px;
+
     @include sm-screen {
       flex-direction: column;
       justify-content: center;
@@ -57,10 +55,9 @@ const signOut = async () => {
 
   &__container {
     display: flex;
-    min-height: 40px;
+    min-height: 50px;
     align-items: center;
     justify-content: space-between;
-
   }
 }
 nav {

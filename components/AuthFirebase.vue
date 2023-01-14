@@ -3,6 +3,7 @@
     class="form"
     @submit.prevent="onSubmit"
   >
+    <UiLoader v-if="isLoading"/>
     <h2 class="title is-4 has-text-black">
       {{ title }}
     </h2>
@@ -25,6 +26,9 @@
     <UiButton type="submit">
       Submit
     </UiButton>
+    <div class="form-message">
+      {{message}}
+    </div>
   </form>
 </template>
 
@@ -39,6 +43,10 @@ defineProps({
   message: {
     type: String,
     default: ''
+  },
+  isLoading: {
+    type: Boolean,
+    default: false
   },
 });
 const emit = defineEmits(['submit'])
@@ -68,17 +76,21 @@ const onSubmit = handleSubmit(() => {
     email: email.value,
   })
 }, onInvalidSubmit)
-
-
 </script>
 
 <style lang="scss" scoped>
 .form {
   display: grid;
   grid-gap: 5px;
+  position: relative;
+  overflow: hidden;
 
   button {
     margin: 10px 0;
   }
+}
+
+.form-message {
+  text-align: center;
 }
 </style>

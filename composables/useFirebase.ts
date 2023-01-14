@@ -9,35 +9,20 @@ import {
 
 export const createUser = async (email, password) => {
   const auth = getAuth();
-  const credentials = await createUserWithEmailAndPassword(
+  return await createUserWithEmailAndPassword(
     auth,
     email,
     password
-  ).catch((error) => {
-    console.error('error', error)
-    alert(error)
-    // const errorCode = error.code;
-    // const errorMessage = error.message;
-  });
-  return credentials;
+  )
 };
 
 export const signInUser = async (email, password) => {
   const auth = getAuth();
-  const credentials = await signInWithEmailAndPassword(
+  return await signInWithEmailAndPassword(
     auth,
     email,
     password
-  ).then(data => {
-    return data
-  }).catch((error) => {
-    console.error('error', error)
-    alert(error)
-    // const errorCode = error.code;
-    // const errorMessage = error.message;
-    return error
-  });
-  return credentials;
+  )
 };
 
 export const initUser = async () => {

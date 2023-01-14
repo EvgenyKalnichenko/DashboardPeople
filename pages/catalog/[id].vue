@@ -20,7 +20,6 @@
 </template>
 
 <script setup>
-import CardPeople from "../../components/card/CardPeople";
 const route = useRoute()
 const id = route.params.id
 
@@ -39,7 +38,6 @@ const testPostReq = () => {
     }
   })
 }
-
 </script>
 
 <style lang="scss" scoped>

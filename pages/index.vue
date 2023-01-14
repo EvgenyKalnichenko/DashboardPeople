@@ -16,8 +16,6 @@
 </template>
 
 <script setup>
-import CardPeople from "../components/card/CardPeople";
-
 const pageIndex = ref(0)
 const getPeople = async () => await $fetch(`https://interview-api-luvkm7etwa-uc.a.run.app/people?p=${pageIndex.value}&pp=8`)
 const { data } = await useAsyncData(

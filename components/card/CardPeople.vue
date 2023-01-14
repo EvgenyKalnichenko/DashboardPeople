@@ -46,11 +46,6 @@
 </template>
 
 <script setup>
-import CardPeopleLabel from "./CardPeopleLabel";
-import CardPeopleRow from "./CardPeopleRow";
-import CardPeopleLineIndicator from "./CardPeopleLineIndicator";
-import CardPeopleAttention from "./CardPeopleAttention";
-
 defineProps({
   people: {
     type: Object,
@@ -63,8 +58,13 @@ defineProps({
 .card {
   display: inline-flex;
   flex-direction: column;
-  border-radius: 15px;
   overflow: hidden;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
 
   &__top {
     position: relative;
