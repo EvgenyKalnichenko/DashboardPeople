@@ -20,8 +20,6 @@
 </template>
 
 <script setup>
-const head = useHead()
-
 const route = useRoute()
 const id = route.params.id
 
