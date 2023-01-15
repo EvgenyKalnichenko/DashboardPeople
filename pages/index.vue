@@ -71,8 +71,11 @@ onUnmounted(() => {
     grid-template-columns: repeat(3,1fr);
   }
 
+  @include sm-screen {
+    grid-gap: 10px;
+  }
+
   @include xs-screen {
-    grid-gap: 20px;
     grid-template-columns: repeat(2,1fr);
   }
 }

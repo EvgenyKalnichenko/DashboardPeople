@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="page-auth">
-      <FormRegister v-if="showRegisterForm"/>
-      <FormLogin v-else/>
+      <FormRegister v-if="showRegisterForm" />
+      <FormLogin v-else />
       <div class="level">
         <div class="level-item has-text-centered">
           <UiButton @click="showRegisterForm = !showRegisterForm">
